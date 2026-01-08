@@ -1,6 +1,6 @@
-# Reachy Robotics
+# Reachy Mini
 
-This is my simple personal experimenting repository with a Reachy Mini robot.
+This is my simple personal experimenting repository with a Reachy Mini simulator.
 
 ## Scripts
 
@@ -26,5 +26,3 @@ Experiments with head gesture animations:
 - `say_no()` - Shakes head left and right (yaw movement)
 - Demonstrates basic animation sequences with position transitions
 
-Currently includes commented sections for the "no" gesture and notes for adding antenna movements.
-# my-reachy-mini
