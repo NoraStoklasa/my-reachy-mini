@@ -1,4 +1,5 @@
 from reachy_mini.utils import create_head_pose
+import random
 
 # Explicit duration for clarity (default is 0.5)
 
@@ -69,3 +70,27 @@ def unsure(reachy):
 
     # return to the initial position
     neutral_position(reachy)
+
+
+def movement_talking(reachy):
+    pose = create_head_pose(
+        pitch=random.uniform(-5, 3),
+        roll=random.uniform(-5, 5),
+        yaw=random.uniform(-6, 6),
+        degrees=True,
+    )
+
+    reachy.goto_target(
+        head=pose,
+        antennas=[
+            random.uniform(-0.2, 0.2),
+            random.uniform(-0.2, 0.2),
+        ],
+        body_yaw=random.uniform(-0.05, 0.05),
+        duration=random.uniform(0.2, 0.6),
+    )
+
+
+def listening(reachy):
+    pose = create_head_pose(pitch=-3, roll=2, degrees=True)
+    reachy.goto_target(head=pose, duration=0.6)
