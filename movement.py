@@ -56,3 +56,16 @@ def look_down(reachy):
     down = create_head_pose(pitch=15, degrees=True)
     reachy.goto_target(head=down, antennas=[0.3, -0.3], duration=1.1)
     neutral_position(reachy)
+
+
+def unsure(reachy):
+    tilt_pose = create_head_pose(pitch=10, roll=10, mm=True)
+
+    reachy.goto_target(head=tilt_pose, antennas=[0.5, -0.5], duration=1.1, body_yaw=0.1)
+
+    reachy.goto_target(
+        head=tilt_pose, antennas=[-0.5, 0.5], duration=1.1, body_yaw=-0.1
+    )
+
+    # return to the initial position
+    neutral_position(reachy)
